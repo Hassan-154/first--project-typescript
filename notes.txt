@@ -1,0 +1,5 @@
+- typescript -> strict enforcement of varible types.
+  .add some cool features to javascript
+- static typing
+
+- interface in typescript
