@@ -5,15 +5,17 @@ interface ItemType {
   title: string;
   completed: boolean;
 }
+interface FormProps {
+  item: ItemType;
+}
 
-function Form(props: { item: ItemType }) {
-
+const Form: React.FC<FormProps> = ({ item }) => {
   return (
 <div
-  className={`flex flex-row justify-between py-0.5 ${props.item.id % 2 === 0 ? 'bg-green-300' : 'bg-red-300' }`}>
-  <div>Id: {props.item.id}</div>
-  <div>Title: {props.item.title}</div>
-  <div>Complete: {props.item.completed ? 'Yes' : 'No'}</div>
+  className={`flex flex-row justify-between py-0.5 ${item.id % 2 === 0 ? 'bg-green-300' : 'bg-red-300' }`}>
+  <div>Id: {item.id}</div>
+  <div>Title: {item.title}</div>
+  <div>Complete: {item.completed ? 'Yes' : 'No'}</div>
 </div>
   );
 }
